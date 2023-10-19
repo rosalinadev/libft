@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:11:16 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/10/18 22:15:37 by rvandepu         ###   ########.fr       */
+/*   Created: 2023/10/19 12:12:11 by rvandepu          #+#    #+#             */
+/*   Updated: 2023/10/19 12:30:28 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*d;
+	char	*s;
 	int		i;
+	int		j;
 
-	i = ft_strlen(s);
-	d = malloc(i + 1);
-	if (d == NULL)
-		return (d);
-	d[i] = '\0';
-	while (i--)
-		d[i] = s[i];
-	return (d);
+	s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (s == NULL)
+		return (s);
+	i = -1;
+	while (s1[++i])
+		s[i] = s1[i];
+	j = -1;
+	while (s2[++j])
+		s[i + j] = s2[j];
+	s[i + j] = '\0';
+	return (s);
 }
