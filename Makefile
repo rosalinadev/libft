@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2023/10/19 12:12:40 by rvandepu         ###   ########.fr        #
+#    Updated: 2023/10/19 13:31:06 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC := ft_isalpha.c \
 	   ft_strdup.c \
 	   ft_substr.c \
 	   ft_strjoin.c \
+	   ft_strtrim.c \
 
 OBJ := $(SRC:%.c=%.o)
 
