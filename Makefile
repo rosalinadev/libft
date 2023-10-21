@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2023/10/21 01:27:22 by rvandepu         ###   ########.fr        #
+#    Updated: 2023/10/21 15:53:28 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ bonus: $(NAME) $(OBJB)
 	$(AR) rs $^
 
 clean:
-	$(RM) -f $(OBJ)
+	$(RM) -f $(OBJ) $(OBJB)
 
 fclean: clean
 	$(RM) -f $(NAME)
