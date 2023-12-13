@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2023/10/21 15:53:28 by rvandepu         ###   ########.fr        #
+#    Updated: 2023/12/13 11:00:12 by remty            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,7 @@ SRC  := ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
-SRCB  = ft_lstnew.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -56,21 +55,20 @@ SRCB  = ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		gnl/get_next_line.c \
+		gnl/get_next_line_utils.c \
 
 OBJ := $(SRC:%.c=%.o)
-OBJB = $(SRCB:%.c=%.o)
 
-CFLAGS += -Wall -Wextra -Werror
+CPPFLAGS += -I.
+CFLAGS   += -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-bonus: $(NAME) $(OBJB)
-	$(AR) rs $^
-
 clean:
-	$(RM) -f $(OBJ) $(OBJB)
+	$(RM) -f $(OBJ)
 
 fclean: clean
 	$(RM) -f $(NAME)
@@ -79,6 +77,3 @@ re: fclean all
 
 $(NAME): $(OBJ)
 	$(AR) rcs $@ $^
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@

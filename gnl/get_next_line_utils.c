@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 01:02:23 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/10/22 14:46:32 by remty            ###   ########.fr       */
+/*   Created: 2023/10/25 18:09:59 by rvandepu          #+#    #+#             */
+/*   Updated: 2023/12/13 10:53:38 by remty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+bool	ft_memclear(t_buf **mem)
 {
-	t_list	*r;
-	t_list	*n;
-	void	*t;
+	t_buf	*next;
 
-	r = NULL;
-	while (lst)
+	while (*mem)
 	{
-		t = f(lst->content);
-		n = ft_lstnew(t);
-		if (n == NULL)
-		{
-			ft_lstclear(&r, del);
-			del(t);
-		}
-		ft_lstadd_back(&r, n);
-		lst = lst->next;
+		next = (*mem)->next;
+		free(*mem);
+		*mem = next;
 	}
-	return (r);
+	return (true);
 }
