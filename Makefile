@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2023/12/13 11:00:12 by remty            ###   ########.fr        #
+#    Updated: 2024/01/06 15:03:03 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,10 +55,14 @@ SRC  := ft_isalpha.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-		gnl/get_next_line.c \
-		gnl/get_next_line_utils.c \
+		get_next_line/get_next_line.c \
+		get_next_line/get_next_line_utils.c \
 
 OBJ := $(SRC:%.c=%.o)
+
+LIB_DIR := ft_printf
+LIB		:= libftprintf.a
+LIB_PATH = $(LIB_DIR)/$(LIB)
 
 CPPFLAGS += -I.
 CFLAGS   += -Wall -Wextra -Werror
@@ -71,9 +75,14 @@ clean:
 	$(RM) -f $(OBJ)
 
 fclean: clean
+	$(MAKE) -C $(LIB_DIR) fclean
 	$(RM) -f $(NAME)
 
 re: fclean all
 
-$(NAME): $(OBJ)
+$(LIB_PATH):
+	$(MAKE) -C $(LIB_DIR)
+
+$(NAME): $(OBJ) | $(LIB_PATH)
 	$(AR) rcs $@ $^
+	printf "OPEN $@\nADDLIB $(LIB_PATH)\nSAVE\nEND" | $(AR) -M

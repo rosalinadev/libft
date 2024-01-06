@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/12/13 10:55:04 by remty            ###   ########.fr       */
+/*   Updated: 2024/01/06 14:31:22 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdarg.h>
 
 typedef struct s_list {
 	void			*content;
@@ -65,5 +66,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*get_next_line(int fd);
+
+int		ft_vprintf(const char *format, va_list args);
+int		ft_printf(const char *format, ...);
 
 #endif
