@@ -6,13 +6,14 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2024/01/06 15:03:03 by rvandepu         ###   ########.fr        #
+#    Updated: 2024/01/22 12:30:51 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 
 SRC  := ft_isalpha.c \
+		ft_iswhitespace.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
 		ft_isascii.c \
@@ -28,9 +29,11 @@ SRC  := ft_isalpha.c \
 		ft_tolower.c \
 		ft_strchr.c \
 		ft_strrchr.c \
+		ft_strcmp.c \
 		ft_strncmp.c \
 		ft_memchr.c \
 		ft_memcmp.c \
+		ft_strstr.c \
 		ft_strnstr.c \
 		ft_atoi.c \
 		ft_calloc.c \
