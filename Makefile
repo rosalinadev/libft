@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2024/01/22 12:30:51 by rvandepu         ###   ########.fr        #
+#    Updated: 2024/01/28 14:18:54 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC  := ft_isalpha.c \
 		ft_lstmap.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
+		ft_bitwise.c \
 
 OBJ := $(SRC:%.c=%.o)
 

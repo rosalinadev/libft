@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/01/22 12:00:39 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/01/27 11:19:20 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stddef.h>
 # include <stdarg.h>
 
-typedef struct s_list {
+typedef struct s_list
+{
 	void			*content;
 	struct s_list	*next;
 }	t_list;
