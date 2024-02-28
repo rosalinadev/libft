@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/02/01 00:20:14 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:01:17 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -71,7 +72,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*get_next_line(int fd);
 
+int		ft_vfprintf(FILE *stream, const char *format, va_list args);
 int		ft_vprintf(const char *format, va_list args);
+int		ft_fprintf(FILE *stream, const char *format, ...);
 int		ft_printf(const char *format, ...);
 
 #endif

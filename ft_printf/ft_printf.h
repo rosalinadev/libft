@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 00:25:43 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/12/21 21:27:29 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:46:38 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 # define FT_PRINTF_H
 
 # include <stdbool.h>
+# include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
 # include "libft.h"
 
 typedef struct s_flags
 {
+	int		fd;
 	bool	leftjust;
 	bool	sign;
 	bool	space;
@@ -35,7 +37,9 @@ typedef struct s_flags
 int	ft_print(va_list args);
 
 // ft_printf.c
+int	ft_vfprintf(FILE *stream, const char *format, va_list args);
 int	ft_vprintf(const char *format, va_list args);
+int	ft_fprintf(FILE *stream, const char *format, ...);
 int	ft_printf(const char *format, ...);
 
 // ft_parser.c

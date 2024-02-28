@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:39:54 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/01/05 15:30:46 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:46:36 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int	ft_printstr(t_flags *flags, const char *str, int len)
 	else
 		ret = len;
 	while (!flags->leftjust && len < flags->width--)
-		write(1, &" 0" + flags->zero, 1);
+		write(flags->fd, &" 0" + flags->zero, 1);
 	i = 0;
 	while (flags->upper && i < len)
 	{
 		c = ft_toupper(str[i++]);
-		write(1, &c, 1);
+		write(flags->fd, &c, 1);
 	}
 	if (!flags->upper)
-		write(1, str, len);
+		write(flags->fd, str, len);
 	while (len < flags->width--)
-		write(1, &" ", 1);
+		write(flags->fd, &" ", 1);
 	return (ret);
 }
 

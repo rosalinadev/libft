@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:02:38 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/01/05 15:08:45 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:45:04 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static int	ft_parse_nbr(const char *format, t_flags *flags, bool w, va_list va)
 int	ft_parse_spec(const char *format, va_list args, t_flags *flags)
 {
 	int	i;
+	int	fd;
 
 	if (!*format)
 		return (0);
@@ -99,7 +100,7 @@ int	ft_parse_spec(const char *format, va_list args, t_flags *flags)
 	if (flags->zero && flags->width && flags->precision > 0)
 		flags->zero = false;
 	if (format[i] == '%')
-		ft_bzero(flags, sizeof(t_flags));
+		flags->fd = ((fd = flags->fd), ft_bzero(flags, sizeof(t_flags)), fd);
 	if (ft_is_in(format[i], SPECS))
 		flags->spec = format[i++];
 	return (i);
