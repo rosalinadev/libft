@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 00:31:58 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/02/28 04:49:12 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:25:26 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,26 @@ static int (*const	g_spec[])(t_flags *flags, va_list args) = {\
 	['%'] = &ft_spec_percent, \
 };
 
-static int	ft_printf_core(t_flags *flags, const char *format, va_list args)
+static int	ft_printf_core(int fd, const char *format, va_list args)
 {
 	int		next;
+	t_flags	flags;
 
+	flags = (t_flags){.fd = fd};
 	next = ft_next_spec(format);
 	if (next)
-		return (ft_printstr(flags, format, next)
-			+ ft_printf_core(flags, format + next, args));
-	next = ft_parse_spec(format, args, flags);
+		return (ft_printstr(&flags, format, next)
+			+ ft_printf_core(fd, format + next, args));
+	next = ft_parse_spec(format, args, &flags);
 	if (next)
-		return (g_spec[(int)flags->spec](flags, args)
-			+ ft_printf_core(flags, format + next, args));
+		return (g_spec[(int)flags.spec](&flags, args)
+			+ ft_printf_core(fd, format + next, args));
 	return (0);
 }
 
 int	ft_vfprintf(FILE *stream, const char *format, va_list args)
 {
-	t_flags	flags;
-
-	ft_bzero(&flags, sizeof(t_flags));
-	flags.fd = fileno(stream);
-	return (ft_printf_core(&flags, format, args));
+	return (ft_printf_core(fileno(stream), format, args));
 }
 
 int	ft_vprintf(const char *format, va_list args)
