@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/02/28 05:01:17 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/05/21 08:32:38 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,8 @@ int		ft_vfprintf(FILE *stream, const char *format, va_list args);
 int		ft_vprintf(const char *format, va_list args);
 int		ft_fprintf(FILE *stream, const char *format, ...);
 int		ft_printf(const char *format, ...);
+
+int		ft_min(unsigned int n, ...);
+int		ft_max(unsigned int n, ...);
 
 #endif
