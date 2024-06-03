@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:09:29 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/12/13 10:54:22 by remty            ###   ########.fr       */
+/*   Updated: 2024/06/03 18:41:18 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,12 @@ static bool	ft_mem_next(t_buf **mem)
 
 char	*get_next_line(int fd)
 {
-	static t_buf	*mem[FD_MAX] = {NULL};
-	char			*line;
+	t_buf	**mem;
+	char	*line;
 
 	if (fd < 0)
 		return (NULL);
+	mem = gnl_get_mem();
 	while (!ft_mem_has_line(mem[fd]))
 		if (!ft_read_to_mem(&mem[fd], fd))
 			return (NULL);

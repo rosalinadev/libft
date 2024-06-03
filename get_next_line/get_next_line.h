@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:10:02 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/01/27 11:21:04 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:52:13 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_buf
 char	*get_next_line(int fd);
 
 // get_next_line_utils.c
+t_buf	**gnl_get_mem(void);
+void	free_gnl(void);
 bool	ft_memclear(t_buf **mem);
 
 #endif
