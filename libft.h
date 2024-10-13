@@ -6,13 +6,14 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/10/13 03:19:44 by rvandepu         ###   ########.fr       */
+/*   Updated: 2024/10/13 06:25:00 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdarg.h>
 # include <stdio.h>
@@ -24,6 +25,7 @@ typedef struct s_list
 }	t_list;
 
 void	ft_bzero(void *s, size_t n);
+bool	ft_in(char c, char *set);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_iswhitespace(int c);
