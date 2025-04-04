@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_in.c                                            :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 06:23:32 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/10/13 06:24:48 by rvandepu         ###   ########.fr       */
+/*   Created: 2025/04/04 06:42:58 by rvandepu          #+#    #+#             */
+/*   Updated: 2025/04/04 06:50:56 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
+#include <stddef.h>
+#include "libft.h"
 
-bool	ft_in(char c, char *set)
+size_t	ft_strspn(const char *s, const char *accept)
 {
-	while (*set)
-		if (c == *set++)
-			return (true);
-	return (false);
+	size_t	i;
+
+	i = 0;
+	while (s[i] && ft_strchr(accept, s[i]))
+		i++;
+	return (i);
+}
+
+size_t	ft_strcspn(const char *s, const char *reject)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] && !ft_strchr(reject, s[i]))
+		i++;
+	return (i);
 }

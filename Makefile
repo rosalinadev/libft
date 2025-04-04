@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2024/10/13 06:25:20 by rvandepu         ###   ########.fr        #
+#    Updated: 2025/04/04 06:54:25 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC  := ft_isalpha.c \
 		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
-		ft_in.c \
 		ft_strlen.c \
 		ft_memset.c \
 		ft_bzero.c \
@@ -34,6 +33,7 @@ SRC  := ft_isalpha.c \
 		ft_strncmp.c \
 		ft_memchr.c \
 		ft_memcmp.c \
+		ft_strspn.c \
 		ft_strstr.c \
 		ft_strnstr.c \
 		ft_atoi.c \

@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/10/15 04:35:13 by rvandepu         ###   ########.fr       */
+/*   Updated: 2025/04/04 06:51:36 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list
 }	t_list;
 
 void	ft_bzero(void *s, size_t n);
-bool	ft_in(char c, char *set);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_iswhitespace(int c);
@@ -46,6 +45,8 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+size_t	ft_strspn(const char *s, const char *accept);
+size_t	ft_strcspn(const char *s, const char *reject);
 char	*ft_strstr(const char *big, const char *little);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
