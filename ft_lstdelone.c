@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 23:43:24 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/10/20 23:54:10 by rvandepu         ###   ########.fr       */
+/*   Updated: 2025/04/05 04:35:48 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst->content);
+	if (del)
+		del(lst->content);
 	free(lst);
 }

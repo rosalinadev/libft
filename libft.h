@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:22:25 by rvandepu          #+#    #+#             */
-/*   Updated: 2025/04/04 06:51:36 by rvandepu         ###   ########.fr       */
+/*   Updated: 2025/04/05 08:47:54 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_list
 {
-	void			*content;
 	struct s_list	*next;
+	void			*content;
 }	t_list;
 
 void	ft_bzero(void *s, size_t n);
@@ -72,8 +72,6 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*get_next_line(int fd);
 void	free_gnl(void);

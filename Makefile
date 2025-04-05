@@ -6,7 +6,7 @@
 #    By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:53:36 by rvandepu          #+#    #+#              #
-#    Updated: 2025/04/04 06:54:25 by rvandepu         ###   ########.fr        #
+#    Updated: 2025/04/05 08:47:42 by rvandepu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,6 @@ SRC  := ft_isalpha.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
 		ft_bitwise.c \
