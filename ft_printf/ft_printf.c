@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 00:31:58 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/11/15 16:26:58 by rvandepu         ###   ########.fr       */
+/*   Updated: 2025/04/08 17:09:54 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,14 @@ static int	ft_printf_core(int fd, const char *format, va_list args)
 
 int	ft_vfprintf(FILE *stream, const char *format, va_list args)
 {
-	return (ft_printf_core(fileno(stream), format, args));
+	int	fd;
+
+	if (stream == stdout)
+		fd = STDOUT_FILENO;
+	else if (stream == stderr)
+		fd = STDERR_FILENO;
+	else
+		return (ft_printf_core(STDOUT_FILENO,
+				"ft_printf: arbitrary streams are unsupported\n", args));
+	return (ft_printf_core(fd, format, args));
 }
