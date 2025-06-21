@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:12:11 by rvandepu          #+#    #+#             */
-/*   Updated: 2024/10/13 04:02:37 by rvandepu         ###   ########.fr       */
+/*   Updated: 2025/06/21 16:49:36 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static bool	joinv(int count, char **ret, va_list *arg, size_t len)
 
 	if (count != 0)
 		s = va_arg(*arg, char *);
+	else
+		return (false);
 	if (count == 0 || s == NULL)
 	{
 		*ret = malloc(len + 1);
